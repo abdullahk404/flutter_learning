@@ -17,7 +17,9 @@ class SystemDashboardState extends State<SystemDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Column(
+      body:SingleChildScrollView(
+        child:
+      Column(
         children: [
           Stack(
             alignment: Alignment.bottomCenter,
@@ -90,22 +92,209 @@ child: Padding(
               ],
             ),
 ),),
-          Padding(padding: EdgeInsets.all(20),
-              child: Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(5)
 
-                ),
-              ),
+         Container(
+           margin: EdgeInsets.all(20),
+           padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+           width: double.infinity,
+           alignment: Alignment.centerLeft,
+           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+               Icon(Icons.web, color: Colors.blueGrey),
+               Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+             ],
+         ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal:10 ),
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10),border:Border.all(color: Colors.white10,width: 1) ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.web, color: Colors.blueGrey),
+                Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),),
 
-          ),
-         
           
         ],
-        
+
         
       ),
-      
-    );
+
+    ),);
   }
 }
