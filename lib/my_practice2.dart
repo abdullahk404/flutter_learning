@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() => runApp(
   MaterialApp(debugShowCheckedModeBanner: false, home: SystemDashboard()),
@@ -40,18 +41,55 @@ class SystemDashboardState extends State<SystemDashboard> {
                     radius: 60,
                     backgroundColor: Colors.white,
                     child:Icon( Icons.person,size:80,color: Colors.grey,),
-                  ))
+
+                  )
+              )
             ],
           ),
-          SizedBox(height: 60,),
-          Text("ELIN TECHNOLOGIES ",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.location_on,size:16,color: Colors.red,),
-              Text("Islamabad",style: TextStyle(fontWeight: FontWeight.bold),)
-            ],
-          ),
+          SizedBox(height: 60),
+          Text("ELINE TECHNOLOGIES ",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+SingleChildScrollView(
+  scrollDirection: Axis.horizontal,
+child: Padding(
+  padding: const EdgeInsets.all(12),
+  child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Islamabad",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Rawalpindi",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Lahore",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Kashmir",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Karachi",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Sindh",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Baluchistan",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Bahawalpur",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Mare",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Bahawalnager",style: TextStyle(fontWeight: FontWeight.bold),),
+                SizedBox(width: 15),
+                Icon(Icons.location_on,size:16,color: Colors.red,),
+                Text("Abtabad",style: TextStyle(fontWeight: FontWeight.bold),),
+              ],
+            ),
+),),
           Padding(padding: EdgeInsets.all(20),
               child: Container(
                 padding: EdgeInsets.all(15),
