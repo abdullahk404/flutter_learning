@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -20,15 +22,28 @@ class SystemDashboardState extends State<SystemDashboard> {
       "QA",
       "UI/UX Designing",
       "Wed Designing",
-          "App Development ",
-          "Designing ",
-          "QA",
-          "UI/UX Designing",
-          "Wed Designing",
-
+      "App Development ",
+      "Designing ",
+      "QA",
+      "UI/UX Designing",
+      "Wed Designing",
     ];
-    final List<String> cities=[
-      "Islamabad","Lahore","Karachi","Baluchistan","Bahawalpur","Bahawalnager","Hasipur","Muree","Kashmir","Abtabad","Rajanpur","Rawalpindi","Muzaffarabad","Mainwali","Patoki",
+    final List<String> cities = [
+      "Islamabad",
+      "Lahore",
+      "Karachi",
+      "Baluchistan",
+      "Bahawalpur",
+      "Bahawalnager",
+      "Hasipur",
+      "Muree",
+      "Kashmir",
+      "Abtabad",
+      "Rajanpur",
+      "Rawalpindi",
+      "Muzaffarabad",
+      "Mainwali",
+      "Patoki",
     ];
 
     return Scaffold(
@@ -74,33 +89,37 @@ class SystemDashboardState extends State<SystemDashboard> {
             // ***************************** ListView.Builder
             SizedBox(
               height: 50,
-            child:ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              itemCount: cities.length,
-              separatorBuilder: (context, int index)=>
-                VerticalDivider(color: Colors.grey[400],
-                thickness: 1,
-                width: 30,
-                indent: 10,
-                endIndent: 10) ,
-              itemBuilder: (context,index){
-                return Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.location_on,size: 16,color: Colors.blue,),
-                    SizedBox(width: 5),
-                    Text(cities[index],
-                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueGrey[800]),
-                    ),],
-                );
-              }
-
-            )
-
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                itemCount: cities.length,
+                separatorBuilder: (context, int index) => VerticalDivider(
+                  color: Colors.grey[400],
+                  thickness: 1,
+                  width: 30,
+                  indent: 10,
+                  endIndent: 10,
+                ),
+                itemBuilder: (context, index) {
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.location_on, size: 16, color: Colors.blue),
+                      SizedBox(width: 5),
+                      Text(
+                        cities[index],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
             ),
-          // ***************************** ScrollView
-          /*  SingleChildScrollView(
+            // ***************************** ScrollView
+            /*  SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
                 padding: const EdgeInsets.all(12),
@@ -369,8 +388,9 @@ class SystemDashboardState extends State<SystemDashboard> {
                 Text("Wed Development ", style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),),*/
+            // *******************************ListView
 
-            ListView.builder(
+            /*ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemCount: services.length,
@@ -407,6 +427,50 @@ class SystemDashboardState extends State<SystemDashboard> {
                   ),
                 );
               },
+            ),*/
+            //******************************* GridView
+            GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.all(20),
+              itemCount: services.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
+              childAspectRatio: 1.1),
+              itemBuilder: (context,index){
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(6),
+                    boxShadow:[
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: Offset(0, 4)
+                      )
+                    ]
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center ,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.blueGrey[50],
+                            child: Icon(Icons.settings,color: Colors.blueGrey,),
+                          ),
+                          SizedBox(height: 12,),
+                          Padding(padding: const EdgeInsets.symmetric(horizontal: 8)
+                          ,child: Text(
+                              services[index],
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),
+                            ),)
+                        ]
+
+                  ),
+                );
+              }
             ),
           ],
         ),
