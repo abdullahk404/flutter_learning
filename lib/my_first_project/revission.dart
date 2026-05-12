@@ -3,55 +3,61 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MaterialApp(home: MyPracticeScreen()));
 
-class MyPracticeScreen extends StatelessWidget {
+class MyPracticeScreen extends StatefulWidget {
   const MyPracticeScreen({super.key});
+
+  @override
+  State<MyPracticeScreen> createState() => _MyPracticeScreenState();
+}
+
+class _MyPracticeScreenState extends State<MyPracticeScreen> {
+  //                                 Forms
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
-        // Drawer
+        //                          Drawer
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
-            children:[
+            children: [
               DrawerHeader(
-                  decoration: BoxDecoration(color: Colors.blue.shade200),
-                  child:
-              Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(radius: 30,
+                decoration: BoxDecoration(color: Colors.blue.shade200),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
 
-                    backgroundColor: Colors.black,
-                    child: Padding(padding: EdgeInsetsGeometry.all(8.3),
-                      child: Image.network('https://cdn-icons-png.flaticon.com/512/3046/3046121.png'
-                      , fit:BoxFit.contain,),
-
-
+                      backgroundColor: Colors.black,
+                      child: Padding(
+                        padding: EdgeInsetsGeometry.all(8.3),
+                        child: Image.network(
+                          'https://cdn-icons-png.flaticon.com/512/3046/3046121.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
                     ),
-
-                   ),
-                  Text("Tiktok",style: TextStyle(fontSize:25))
-
-                ],
-
-              )
+                    Text("Tiktok", style: TextStyle(fontSize: 25)),
+                  ],
+                ),
               ),
-          // Menu Items
-          ListTile(
-            leading: const Icon(Icons.home),
-              title: const Text("Home"),
-              onTap:()=> Navigator.pop(context)
-      ),
-        ListTile(
-          leading: const Icon(Icons.language),
-          title: const Text("Language"),
-          onTap: () => Navigator.pop(context),
-        ),
+              //                                 Drawer Menu Items
               ListTile(
-                leading: const Icon(Icons. notifications),
+                leading: const Icon(Icons.home),
+                title: const Text("Home"),
+                onTap: () => Navigator.pop(context),
+              ),
+              ListTile(
+                leading: const Icon(Icons.language),
+                title: const Text("Language"),
+                onTap: () => Navigator.pop(context),
+              ),
+              ListTile(
+                leading: const Icon(Icons.notifications),
                 title: const Text("Notifications"),
                 onTap: () => Navigator.pop(context),
               ),
@@ -75,28 +81,20 @@ class MyPracticeScreen extends StatelessWidget {
                 title: const Text("Downloads"),
                 onTap: () => Navigator.pop(context),
               ),
-
-
-
-
-
-
-
             ],
-
           ),
         ),
-        // App Bar
+        //                                        App Bar
         appBar: AppBar(
           // Left side leading section
           // leading: IconButton(
           //   onPressed: () => print("Mane Tapped"),
           //   icon: const Icon(Icons.menu),
           // ),
-          // The Middle
+          //                                 AppBar Tittle
           title: const Text("My Apps"),
           centerTitle: true,
-          // Right side Actions
+          //                                 AppBar Right icons
           actions: [
             IconButton(
               onPressed: () => print("search Tapped"),
@@ -111,23 +109,87 @@ class MyPracticeScreen extends StatelessWidget {
           // The Style
           backgroundColor: Colors.blue.shade200,
           elevation: 4,
-          // TabBar
+          //                                   TabBar
           bottom: const TabBar(
             unselectedLabelColor: Colors.blueGrey,
             labelColor: Colors.black,
             tabs: [
               Tab(icon: Icon(Icons.camera_alt), text: "Camera"),
-              Tab(icon: Icon(Icons.photo_library),text: "Gallery", ),
+              Tab(icon: Icon(Icons.photo_library), text: "Gallery"),
+              Tab(icon: Icon(Icons.book), text: "Forms"),
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(
+            const Center(
               child: Text("Camera Content", style: TextStyle(fontSize: 18)),
             ),
-            Center(
+            const Center(
               child: Text("Gallery Content", style: TextStyle(fontSize: 18)),
+            ),
+                                                // Form
+            Padding(
+              padding: const EdgeInsetsGeometry.all(16),
+              child: Form(
+                key: _formKey, // Teh Clipboard
+                child: Column(
+                  children: [
+                    const Text(
+                      "Sign In",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.email),
+                      ),
+                      // the Security Guard
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please Enter Your Email";
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: "Password",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.password)
+                      ),
+                      validator: (value){
+                        if (value== null || value.isEmpty){
+                          return "Please Enter Your Password ";
+                        }
+                        return null;
+
+                      },
+
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        // check if the form is valid
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Processing Data ..."),
+                            ),
+                          );
+                        }
+                      },
+                      child: const Text("Submit"),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
