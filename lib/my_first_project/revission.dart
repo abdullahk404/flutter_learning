@@ -114,9 +114,10 @@ class _MyPracticeScreenState extends State<MyPracticeScreen> {
             unselectedLabelColor: Colors.blueGrey,
             labelColor: Colors.black,
             tabs: [
+              Tab(icon: Icon(Icons.book), text: "Forms"),
               Tab(icon: Icon(Icons.camera_alt), text: "Camera"),
               Tab(icon: Icon(Icons.photo_library), text: "Gallery"),
-              Tab(icon: Icon(Icons.book), text: "Forms"),
+
             ],
           ),
         ),
